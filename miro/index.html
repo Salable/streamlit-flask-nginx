@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://miro.com/app/static/sdk/v2/miro.js"></script>
+  </head>
+  <body>
+    <h1>Hello there! You found my html page.</h1>
+    <script>
+        miro.board.ui.on('icon:click', () => {
+            miro.board.ui.openPanel({url: '/'});
+        });
+    </script>
+  </body>
+</html>
