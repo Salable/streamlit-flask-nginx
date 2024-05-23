@@ -27,7 +27,7 @@ COPY --chown=streamlitapp ./config/nginx /home/streamlitapp/.nginx/
 COPY --chown=streamlitapp ./config/streamlit /home/streamlitapp/.streamlit/
 COPY --chown=streamlitapp ./bin /home/streamlitapp/bin/
 COPY --chown=streamlitapp ./app /home/streamlitapp/app/
-COPY --chown=streamlitapp ./miro /home/streamlitapp/miro/
+COPY --chown=streamlitapp ./api /home/streamlitapp/api/
 
 # Set Python paths
 ENV PYTHONPATH "${PYTHONPATH}:/home/streamlitapp/src"
