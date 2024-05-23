@@ -2,6 +2,7 @@ FROM python:3.12-slim
 
 LABEL maintainer="Neal Riley <neal@salable.app>"
 
+# Use root user for dependency installs
 USER root
 
 # Install dependencies and nginx
@@ -27,7 +28,7 @@ COPY --chown=streamlitapp ./config/nginx /home/streamlitapp/.nginx/
 COPY --chown=streamlitapp ./config/streamlit /home/streamlitapp/.streamlit/
 COPY --chown=streamlitapp ./bin /home/streamlitapp/bin/
 COPY --chown=streamlitapp ./app /home/streamlitapp/app/
-COPY --chown=streamlitapp ./miro /home/streamlitapp/miro/
+COPY --chown=streamlitapp ./miro/fe/build /home/streamlitapp/miro/
 
 # Set Python paths
 ENV PYTHONPATH "${PYTHONPATH}:/home/streamlitapp/src"
@@ -37,6 +38,7 @@ ENV PATH "${PATH}:/home/streamlitapp/src/bin:/home/streamlitapp/src/server/bin"
 WORKDIR /home/streamlitapp/app
 USER streamlitapp
 
+# Load nginx proxy before running streamlit
 ENTRYPOINT ["/home/streamlitapp/bin/start-nginx.sh"]
 
 CMD ["streamlit", "run", "app.py"]
