@@ -38,5 +38,3 @@ WORKDIR /home/streamlitapp/app
 USER streamlitapp
 
 ENTRYPOINT ["/home/streamlitapp/bin/start-nginx.sh"]
-
-CMD ["streamlit", "run", "app.py"]
