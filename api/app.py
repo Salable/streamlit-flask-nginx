@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/api/<route>', methods=['POST'])
 def index(route):
-    if route == 'store':
+    if route == 'echo':
         data = request.get_json()  
         print(data)
         return jsonify(

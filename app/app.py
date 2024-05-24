@@ -3,12 +3,10 @@ import requests
 
 base_url="http://localhost:8080"
 
-def call_flask_api():
-    response = requests.post(f"{base_url}/api/store", json={
-        "key": "hello",
-        "value" : """
-        print("World")
-        """
+def call_flask_api(path, key, value):
+    response = requests.post(f"{base_url}/api/{path}", json={
+        "key": key,
+        "value" : value
     })
     if response.status_code == 200:
         data = response.json()
@@ -17,7 +15,13 @@ def call_flask_api():
     return "Failed to get time"
 
 # Streamlit app
-st.title("Current Time Fetcher")
+st.title("Make a Flask API Call from Streamlit")
 
-if st.button("Get Current Time"):
-    st.write(call_flask_api())
+path=st.text_input("Enter the path to the API", "echo")
+key=st.text_input("Enter the key", "hello")
+value=st.text_area("Enter the value", "World")
+if st.button("Make the call!"):
+    st.write(f'/api/{path}')
+    st.write(f'key: {key}')
+    st.write(f'value: {value}')
+    st.write(call_flask_api(path, key, value))
