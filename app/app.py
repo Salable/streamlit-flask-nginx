@@ -1,5 +1,6 @@
 import streamlit as st
-import requests
+import requests 
+import streamlit.components.v1 as components
 
 base_url="http://localhost:8080"
 
@@ -25,3 +26,8 @@ if st.button("Make the call!"):
     st.write(f'key: {key}')
     st.write(f'value: {value}')
     st.write(call_flask_api(path, key, value))
+
+
+# embed streamlit docs in a streamlit app
+components.iframe("/web/index.html", height=500)
+st.markdown("[Open in Browser](/web/index.html)")
