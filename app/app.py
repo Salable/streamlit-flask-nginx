@@ -19,16 +19,17 @@ def call_flask_api(path, key, value):
 st.title("Make a Flask API Call from Streamlit")
 
 path=st.text_input("Enter the path to the API", "echo")
-key=st.text_input("Enter the key", "hello")
-value=st.text_area("Enter the value", "World")
-if st.button("Make the call!"):
+key=st.text_input("Enter the key", "name")
+value=st.text_area("Enter the value", "John Doe")
+if st.button("Call the API"):
     st.write(f'/api/{path}')
     st.write(f'key: {key}')
     st.write(f'value: {value}')
     st.write(call_flask_api(path, key, value))
 
-
+st.header("Embedding a Processing Sketch in Streamlit")
+st.write("This accesses the API as well, using loadJSON(), and renders it in a full screen canvas.")
 url=st.text_input("Enter the URL to embed", "/web/index.html")
 # embed streamlit docs in a streamlit app
-components.iframe(url, height=500)
+components.iframe(src=url, height=500, width=700, scrolling=False)
 st.markdown("[Open in Browser](/web/index.html)")
