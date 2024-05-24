@@ -37,4 +37,4 @@ ENV PATH "${PATH}:/home/streamlitapp/src/bin:/home/streamlitapp/src/server/bin"
 WORKDIR /home/streamlitapp/app
 USER streamlitapp
 
-ENTRYPOINT ["/home/streamlitapp/bin/start-nginx.sh"]
+ENTRYPOINT ["/home/streamlitapp/bin/entrypoint.sh"]
