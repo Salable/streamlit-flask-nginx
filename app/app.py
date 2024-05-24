@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-import datetime
 
 base_url="http://localhost:8080"
 
