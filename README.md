@@ -7,3 +7,7 @@ Use this at your own risk!
 Run this project with Docker!
 
 `docker build -t st_app . && docker run -it -p 8080:8080 st_app`
+
+The Streamlit app is located in `app/`, the Flask app is located in `api/`. Simply modify each of the `app.py` files to get started! The magic of this comes from the nginx proxy, and the configuration (inspired by https://github.com/lballore/streamlit-nginx). 
+
+The requirements for Flask and Streamlit are shared, and you could presumably share local libraries/conf as well if desired.
