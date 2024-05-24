@@ -28,6 +28,7 @@ if st.button("Make the call!"):
     st.write(call_flask_api(path, key, value))
 
 
+url=st.text_input("Enter the URL to embed", "/web/index.html")
 # embed streamlit docs in a streamlit app
-components.iframe("/web/index.html", height=500)
+components.iframe(url, height=500)
 st.markdown("[Open in Browser](/web/index.html)")
