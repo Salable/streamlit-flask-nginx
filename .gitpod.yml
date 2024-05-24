@@ -1,4 +1,4 @@
 
 
 tasks:
-  - init: docker build -t st_app . && docker run -it -p 8080:8080 st_app
+  - init: cd web && npm install && npm run build && cd .. && docker build -t st_app . && docker run -it -p 8080:8080 st_app
