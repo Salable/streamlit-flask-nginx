@@ -4,7 +4,8 @@ import random
 
 st.title("Flock")
 
-value = sketch("""let flock;
+value = sketch("""
+let flock
 
 function setup() {
   createCanvas(700, 500);
@@ -19,9 +20,8 @@ function setup() {
 }
 
 function draw() {
-  background(51);
   flock.run();
-}
+}     
 
 // Add a new boid into the System
 function mouseDragged() {
@@ -223,10 +223,11 @@ Boid.prototype.cohesion = function(boids) {
 }
 """, width=700, height=500)
 st.write("*Code:*")
-st.code("""let flock;
+st.code("""
+let flock
 
 function setup() {
-  createCanvas(640, 360);
+  createCanvas(700, 500);
   createP("Drag the mouse to generate new boids.");
 
   flock = new Flock();
@@ -238,9 +239,8 @@ function setup() {
 }
 
 function draw() {
-  background(51);
   flock.run();
-}
+}     
 
 // Add a new boid into the System
 function mouseDragged() {
@@ -366,6 +366,7 @@ Boid.prototype.separate = function(boids) {
   let desiredseparation = 25.0;
   let steer = createVector(0, 0);
   let count = 0;
+  // For every boid in the system, check if it's too close
   for (let i = 0; i < boids.length; i++) {
     let d = p5.Vector.dist(this.position,boids[i].position);
     // If the distance is greater than 0 and less than an arbitrary amount (0 when you are yourself)
