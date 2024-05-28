@@ -21,6 +21,9 @@ function draw() {
     }
     iter++
 }
+function mousePressed() {
+    background(14, 17, 23)
+}
 """, width=700, height=500)
 
 st.header("Streamlit and Processing together at last")
