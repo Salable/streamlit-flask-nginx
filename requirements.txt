@@ -1,3 +1,10 @@
 streamlit
 requests
 flask
+firecrawl-py
+ollama
+miro_api
+extra-streamlit-components
+beautifulsoup4
+python-dotenv 
+salable

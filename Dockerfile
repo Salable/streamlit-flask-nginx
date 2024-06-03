@@ -28,7 +28,7 @@ COPY --chown=streamlitapp ./config/streamlit /home/streamlitapp/.streamlit/
 COPY --chown=streamlitapp ./bin /home/streamlitapp/bin/
 COPY --chown=streamlitapp ./app /home/streamlitapp/app/
 COPY --chown=streamlitapp ./api /home/streamlitapp/api/
-COPY --chown=streamlitapp ./web/build /home/streamlitapp/web/
+COPY --chown=streamlitapp ./web/dist /home/streamlitapp/web/
 
 
 # Set Python paths
